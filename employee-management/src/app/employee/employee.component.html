@@ -1,0 +1,114 @@
+<div class="col-md-8">
+<table border="1" class="table-striped">
+  <thead></thead>
+  <tr>
+    <th><a (click)="sortOn('CLOSE')">id</a></th>
+    <th sortable-column="employeeId" sort-direction="asc">  employee Id</th>
+    <th>name</th>
+    <th>designation</th>
+    <th>salary</th>
+
+
+    </tr>
+
+  <tbody>
+      <tr *ngFor="let employee of employees">
+           <td>{{employee.id}}</td>
+           <td>{{employee.employeeId}}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.designation}}</td>
+          <td>{{employee.salary}}</td>
+
+          <td><button mat-button color="primary"  matBadge="14" (click)="deleteEmployee(employee)"> Delete Employee</button></td>
+
+          </tr>
+  </tbody>
+  </table>
+
+
+</div>
+<!--
+<div class="resize-handle-left"
+mwlResizeHandle
+[resizeEdges]="{ left: true }">
+<mat-form-field style="position:relative; left:80px; top:70px;" >
+  <mat-label style="position:relative; left:-70px; top:0px;" >Id:</mat-label>
+  <input matInput placeholder="Id:" style="position:relative; left:-90px; top:30px; width:220px;">
+</mat-form-field>
+<mat-form-field style="position:relative; left:40px; top:70px;" >
+<mat-label style="position:relative;">Employee Id:</mat-label>
+<input matInput placeholder="Employee Id:" style="position:relative; left:-90px; top:30px; width:220px;">
+</mat-form-field>
+<mat-form-field style="position:relative; left:0px; top:70px;" >
+<mat-label style="position:relative;">Designation:</mat-label>
+<input matInput placeholder="Designation:" style="position:relative; left:-90px; top:30px; width:220px;">
+</mat-form-field>
+
+</div>
+<mat-grid-list cols = "4" rowHeight = "100px">
+  <mat-grid-tile
+  [colspan] = "3"
+  [rowspan] = "1">1
+  </mat-grid-tile>
+  <mat-grid-tile
+  [colspan] = "1"
+  [rowspan] = "2">2
+  </mat-grid-tile>
+  <mat-grid-tile
+  [colspan] = "1"
+  [rowspan] = "1">3
+  </mat-grid-tile>
+  <mat-grid-tile
+  [colspan] = "2"
+  [rowspan] = "1">4
+  </mat-grid-tile>
+</mat-grid-list>
+-->
+
+  <!--
+    <h3>mat-list and mat-list-item</h3>
+<mat-list>
+  <mat-list-item>Suresh</mat-list-item>
+  <mat-list-item>Mahesh</mat-list-item>
+  <mat-list-item>Krishna</mat-list-item>
+</mat-list>
+<h3>mat-nav-list and mat-list-item</h3>
+<mat-nav-list>
+  <a mat-list-item href="http://linktest1.com" >
+    <mat-icon>book</mat-icon>
+  </a>
+  <a mat-list-item href="http://linktest2.com" >
+    <mat-icon>cloud</mat-icon>
+  </a>
+</mat-nav-list>
+<h3>mat-selection-list and mat-list-option</h3>
+
+<div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="qid">
+      <th mat-header-cell *matHeaderCellDef> QID </th>
+      <td mat-cell *matCellDef="let element"> {{element.qid}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="questionText">
+      <th mat-header-cell *matHeaderCellDef> Question Text </th>
+      <td mat-cell *matCellDef="let element"> {{element}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+    *matRowDef="let row; columns: displayedColumns;"
+    [ngClass]="{ 'selected-row' : row.selected }"
+    ></tr>
+
+  </table>
+
+
+</div>
+--->
+
+

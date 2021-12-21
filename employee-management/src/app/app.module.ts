@@ -22,7 +22,10 @@ import { MatSortModule } from '@angular/material/sort'
 import { ResizableModule } from 'angular-resizable-element';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
-
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './service/auth.interceptor'
 const materialModules = [
   MatTableModule,
   MatPaginatorModule,
@@ -37,6 +40,8 @@ const materialModules = [
     FooterComponent,
     LoginComponent,
     LogoutComponent,
+    RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,14 @@ MatListModule,
 ResizableModule,
 materialModules
   ],
-  providers: [],
+  providers: [
+    AuthInterceptor,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

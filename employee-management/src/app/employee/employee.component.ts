@@ -1,8 +1,11 @@
+import { AuthInterceptor } from './../service/auth.interceptor';
+import { AuthService } from './../service/auth.service';
 import { HttpClientService, Employee } from '../service/http-client.service';
 import { Component, HostListener, Input, OnInit, ViewChild } from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 import {take} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-employee',
@@ -17,7 +20,7 @@ export class EmployeeComponent implements OnInit {
   sortedColumn$: any;
 
 
-  constructor(private HttpClientService: HttpClientService) { }
+  constructor(private HttpClientService: HttpClientService,  private authService: AuthService, ) { }
 
   @Input('sortable-column')
     columnName: string | undefined;
@@ -30,6 +33,7 @@ export class EmployeeComponent implements OnInit {
         this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
     }
   ngOnInit(): void {
+
     this.HttpClientService.getEmployees().subscribe(
       response =>{this.employees = response;}
      );

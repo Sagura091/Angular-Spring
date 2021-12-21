@@ -9,12 +9,16 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
+import {RegisterComponent} from './register/register.component'
+import { ProfileComponent } from './profile/profile.component';
 
 
-const routes: Routes = [ { path:'', component: EmployeeComponent,canActivate:[AuthGaurdService]},
-{ path:'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService] },
+const routes: Routes = [ { path:'', component: EmployeeComponent},
+{ path:'addemployee', component: AddEmployeeComponent },
 { path: 'login', component: LoginComponent},
-{ path: 'logout', component: LogoutComponent,canActivate:[AuthGaurdService]},];
+{ path: 'register', component: RegisterComponent},
+{ path: 'profile', component: ProfileComponent},
+{ path: 'logout', component: LogoutComponent},];
 
 @NgModule({
 
